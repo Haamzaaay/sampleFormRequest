@@ -64,6 +64,8 @@ final class sampleRequest extends FormRequest
    */
   protected function passedValidation():void
     {
+  // this function is always called in the formrequest, so if i unset somekey here i wont get it in validatedfunction because passedvalidation runs before validated() and make actual changes;
+      $this->offunset() ; // to remove a key from request , 
       $this->merge([]);
     }
 
